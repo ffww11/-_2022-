@@ -4,17 +4,10 @@ import TheWelcome from './components/home/homeRight.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/sslogo.svg" width="225" height="225" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <!-- 动态路由内容 -->
+    <router-view></router-view>
 
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
 <style scoped>
