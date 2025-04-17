@@ -19,7 +19,7 @@ defineProps({
       <li>便利学习教学工具</li>
     </ul>
     <p class="cta">
-      <a href="/courses" class="button">开始学习</a>
+      <router-link to="/Login" class="button">开始学习</router-link>
     </p>
   </div>
 </template>

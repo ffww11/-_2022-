@@ -1,6 +1,6 @@
 <script setup>
-import HelloWorld from './components/home/homelogo.vue'
-import TheWelcome from './components/home/homeRight.vue'
+import HelloWorld from './homelogo.vue'
+import TheWelcome from './homeRight.vue'
 </script>
 
 <template>
