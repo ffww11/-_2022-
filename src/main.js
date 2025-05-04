@@ -1,15 +1,19 @@
-import './assets/main.css'; // 引入全局样式
-import { createApp } from 'vue';
-import App from './App.vue';
+import './assets/main.scss'
 
-// 引入路由配置文件（注意路径）
-import router from './router/index.js'; // 使用相对路径
+import { createApp } from 'vue'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import router from '@/router'
+import App from './App.vue'
+import {createPinia} from 'pinia'
+import { createPersistedState } from 'pinia-persistedstate-plugin'
+import locale from 'element-plus/dist/locale/zh-cn.js'
 
-// 创建 Vue 应用
 const app = createApp(App);
-
-// 注册路由
-app.use(router);
-
-// 挂载应用到 DOM
-app.mount('#app');
+const pinia = createPinia();
+const persist = createPersistedState();
+pinia.use(persist)
+app.use(pinia)
+app.use(router)
+app.use(ElementPlus,{locale});
+app.mount('#app')

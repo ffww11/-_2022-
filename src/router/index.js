@@ -1,25 +1,36 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router'
 
-// 导入你的页面组件
+//导入组件
+import LoginVue from '@/views/Login.vue'
+import LayoutVue from '@/views/Layout.vue'
 import HomePage from '@/components/home/home.vue';
-import LoginPage from '@/components/login.vue'; // 创建你的课程页面
+import ArticleCategoryVue from '@/views/article/ArticleCategory.vue'
+import ArticleManageVue from '@/views/article/ArticleManage.vue'
+import UserAvatarVue from '@/views/user/UserAvatar.vue'
+import UserInfoVue from '@/views/user/UserInfo.vue'
+import UserResetPasswordVue from '@/views/user/UserResetPassword.vue'
 
+//定义路由关系
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: HomePage,
-  },
-  {
-    path: '/Login',
-    name: 'Login',
-    component: LoginPage,
-  },
-];
+    { path: '/login', component: LoginVue },
+    {
+        path: '/', component: LayoutVue,redirect:'/article/manage', children: [
+            { path: '/article/category', component: ArticleCategoryVue },
+            { path: '/article/manage', component: ArticleManageVue },
+            { path: '/user/info', component: UserInfoVue },
+            { path: '/user/avatar', component: UserAvatarVue },
+            { path: '/user/resetPassword', component: UserResetPasswordVue }
+        ]
+    },
+    {path: '/Home', component: HomePage},
 
+]
+
+//创建路由器
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
+    history: createWebHistory(),
+    routes: routes
+})
 
-export default router;
+//导出路由
+export default router
