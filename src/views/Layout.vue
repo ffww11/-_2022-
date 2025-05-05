@@ -82,13 +82,13 @@ const handleCommand = (command)=>{
                     <el-icon>
                         <Management />
                     </el-icon>
-                    <span>文章分类</span>
+                    <span>学习助手</span>
                 </el-menu-item>
                 <el-menu-item index="/article/manage">
                     <el-icon>
                         <Promotion />
                     </el-icon>
-                    <span>文章管理</span>
+                    <span>教案管理</span>
                 </el-menu-item>
                 <el-sub-menu >
                     <template #title>
@@ -122,7 +122,7 @@ const handleCommand = (command)=>{
         <el-container>
             <!-- 头部区域 -->
             <el-header>
-                <div>黑马程序员：<strong>{{ userInfoStore.info.nickname }}</strong></div>
+                <div>身份：<strong>{{ userInfoStore.info.nickname }}</strong></div>
                 <!-- 下拉菜单 -->
                 <!-- command: 条目被点击后会触发,在事件函数上可以声明一个参数,接收条目对应的指令 -->
                 <el-dropdown placement="bottom-end" @command="handleCommand">
@@ -150,7 +150,7 @@ const handleCommand = (command)=>{
                 <router-view></router-view>
             </el-main>
             <!-- 底部区域 -->
-            <el-footer>大事件 ©2023 Created by 黑马程序员</el-footer>
+            <el-footer>师说 ©2025 Created by 师说开发团队</el-footer>
         </el-container>
     </el-container>
 </template>
